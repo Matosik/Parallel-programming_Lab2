@@ -10,14 +10,12 @@
 4. Windows 10 Home
 
 
+
 ### Графики 
 
-![Alt текст](dataOpenMP/G_1.png)
-![Alt текст](dataOpenMP/G_2.png)
-![Alt текст](dataOpenMP/G_3.png)
-![Alt текст](dataOpenMP/G_4.png)
-![Alt текст](dataOpenMP/G_5.png)
+![Alt текст](dataOpenMP/G.png)
 
 
+Кол-во потоков используемых при выполнении данного исследования - 4
 ## Выводы
 OpenMP позволил ускорить исследуемую операцию.
