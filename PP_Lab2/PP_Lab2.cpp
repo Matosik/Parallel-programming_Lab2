@@ -45,12 +45,12 @@ vector<vector<int>> generateMatrix(int size) {
 vector<vector<int>> multiplyMatrices(const vector<vector<int>>& A, const vector<vector<int>>& B) {
     int n = A.size();
     vector<vector<int>> C(n, vector<int>(n, 0));
-
+    int i, j, k;
 #pragma omp parallel for shared(A, B, C)  private(i, j, k)
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    for ( i = 0; i < n; i++) {
+        for ( j = 0; j < n; j++) {
             int sum = 0;
-            for (int k = 0; k < n; k++) {
+            for ( k = 0; k < n; k++) {
                 sum += A[i][k] * B[k][j];
             }
             C[i][j] = sum;
@@ -60,7 +60,9 @@ vector<vector<int>> multiplyMatrices(const vector<vector<int>>& A, const vector<
     return C;
 }
 
-int main() {
+int main() { 
+    omp_set_num_threads(omp_get_max_threads());
+    
     setlocale(LC_ALL, "RU");
     _mkdir("dataOpenMP");
     _mkdir("dataOpenMP/matrix");
